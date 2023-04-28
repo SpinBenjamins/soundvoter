@@ -1,50 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./assets/style.css" rel="stylesheet" >
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/style.css" rel="stylesheet" />
     <script src="./assets/script.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head4>
+
+  <header>
     <title>SoundVoter</title>
-</head>
-<body>
-    <h1> SOUNDVOTER</h1>
-    <h2> Welcome to SOUNDVOTER! Where you can listen music and find lyrics</h2>
-    <p> Placeholder</p>
-    
- <h2> PREFERENCES </h2>
+  </header>
 
- <div id="drop-down"> 
- <label for="genres">Choose a genre:</label>
+  <body>
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Open Modal</button>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>modal</p>
+      </div>
+    </div>
 
-<select name="genre" id="genre-dropdown">
-  <option value="rap">Rap</option>
-  <option value="rock">Rock</option>
-  <option value="Raggae">Raggae</option>
-  <option value="Country">Country</option>
-</select>
+    <h1>SOUNDVOTER</h1>
+    <h2>Welcome to SOUNDVOTER! Where you can listen music and find lyrics</h2>
+    <p>Placeholder</p>
 
-<label for="Mood">Whatchya feelin?:</label>
+    <h2>PREFERENCES</h2>
 
-<select name="mood" id="feeling">
-  <option value="Party">PARTY!</option>
-  <option value="Chill">chill</option>
-  <option value="Beach">beach</option>
-  <option value="Broken Heart">Broken Heart</option>
-</select>
-<button id="save"> Save </button>
-</div>
+    <div id="drop-down">
+      <label for="genres">Choose a genre:</label>
 
-<div id="recommendation-list">
-    <ul>place holder</ul>
-    <ul>place holder</ul>
-</div>
+      <select name="genre" id="genre-dropdown">
+        <option value="rap">Rap</option>
+        <option value="rock">Rock</option>
+        <option value="Raggae">Raggae</option>
+        <option value="Country">Country</option>
+      </select>
 
+      <label for="Mood">Whatchya feelin?:</label>
 
+      <select name="mood" id="feeling">
+        <option value="Party">PARTY!</option>
+        <option value="Chill">chill</option>
+        <option value="Beach">beach</option>
+        <option value="Broken Heart">Broken Heart</option>
+      </select>
+      <button id="save">Save</button>
+    </div>
 
-    
-</body>
+    <div id="recommendation-list">
+      <ul>
+        place holder
+      </ul>
+      <ul>
+        place holder
+      </ul>
+    </div>
+  </body>
 
-<link href="./assets/script.js"  rel="javaScript">
+  <link href="./assets/script.js" rel="javaScript" />
 </html>
