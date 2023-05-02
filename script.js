@@ -62,5 +62,5 @@ if (localStorage.getItem("spotifyToken") === null || undefined) {
   getSpotifyToken();
 }
 
-// var query = generateRecommendationUrl('pop', 'chill');
-// console.log(query)
+var query = generateRecommendationUrl("pop", "chill");
+console.log(query);
