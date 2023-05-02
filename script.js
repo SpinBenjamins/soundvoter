@@ -1,3 +1,29 @@
+/* selectors */
+var genreInput = document.getElementById("genre-dropdown");
+var tempoInput = document.getElementById("tempo-dropdown");
+var songBtn = document.getElementById("get-song-btn");
+var player = document.getElementById("player");
+
+/* event listeners */
+genreInput.addEventListener("change", checkDropdowns);
+tempoInput.addEventListener("change", checkDropdowns);
+songBtn.addEventListener("click", fetchRecommendedTrack);
+
+/* functions */
+
+/**
+ * Checks to see if both genre and mood dropdowns are populated
+ */
+function checkDropdowns() {
+  if (genreInput.value !== "" && tempoInput.value !== "") {
+    songBtn.disabled = false;
+    songBtn.classList.remove("disabled");
+  } else {
+    songBtn.disabled = true;
+    songBtn.classList.add("disabled");
+  }
+}
+
 /**
  * Get valid access token for Spotify API and save to localStorage
  * https://developer.spotify.com/dashboard/1de952fb45424bf386fb86f7f614b07b/settings
@@ -55,7 +81,14 @@ function generateRecommendationUrl(genre, liveness) {
 /**
  * Fetch recommended track based on user input
  */
-function fetchRecommendedTrack() {}
+function fetchRecommendedTrack() {
+  // only run if both dropdowns are selected
+  if (genreInput.value && tempoInput.value) {
+    player.classList.remove("hidden");
+    var url = generateRecommendationUrl(genreInput.value, tempoInput.value);
+    console.log(url);
+  }
+}
 
 // check if token exists in localStorage, if not, fetch valid token
 if (localStorage.getItem("spotifyToken") === null || undefined) {
