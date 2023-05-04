@@ -8,6 +8,7 @@ var recommendedTrackArtist = document.getElementById("track-artist");
 var recommendedTrackImage = document.getElementById("track-image");
 var saveBtn = document.getElementById("save-button");
 var skipBtn = document.getElementById("skip-button");
+var savedTracksList = document.getElementById("saved-tracks-list");
 
 // local variables
 var savedTracks = [];
@@ -135,10 +136,34 @@ function saveTrack(trackName, trackArtist, trackImage) {
     trackArtist: trackArtist,
     trackImage: trackImage,
   });
-  localStorage.setItem("savedTrackList", savedTracks);
+  localStorage.setItem("savedTracksList", savedTracks);
   console.log(savedTracks);
   // get new track recommendation on click
   fetchRecommendedTrack();
+  // dynamically populate saved tracks list
+  savedTracksList.innerHTML = "";
+  savedTracks.forEach(function (track) {
+    var listItem = document.createElement("li");
+    var trackCard =
+      "" +
+      '<div class="bg-white rounded-lg shadow-md p-4 flex">' +
+      '<img src="' +
+      track.trackImage +
+      '" alt="' +
+      track.trackName +
+      ' Album Art" class="w-24 h-24 object-cover rounded-md">' +
+      '<div class="ml-4">' +
+      '<h3 class="text-xl font-semibold">' +
+      track.trackName +
+      "</h3>" +
+      '<p class="text-gray-600">' +
+      track.trackArtist +
+      "</p>" +
+      "</div>" +
+      "</div>";
+    savedTracksList.innerHTML += trackCard;
+    savedTracksList.appendChild(listItem);
+  });
 }
 
 // check if token exists in localStorage, if not, fetch valid token
