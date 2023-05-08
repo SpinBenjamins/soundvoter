@@ -208,7 +208,7 @@ function fetchSongLyrics(songName) {
 
 // Call the function with the song name
 fetchSongLyrics(songName);
-=======
+
 // check if token exists in localStorage, if not, fetch valid token
 // if (localStorage.getItem("spotifyToken") === null || undefined) {
 getSpotifyToken();
